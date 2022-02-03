@@ -40,6 +40,10 @@ public class Program {
 		seller.setName("André Alexandre");
 		sellerDao.update(seller);
 		System.out.println("Update completed");
+		
+		System.out.println("\nTESTE 6: seller delete");
+		sellerDao.deleteById(10);
+		System.out.println("Deletion completed");
 	}
 
 }
