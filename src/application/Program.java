@@ -47,13 +47,19 @@ public class Program {
 		sellerDao.deleteById(10);
 		System.out.println("Deletion completed");
 		*/
+		//*****************************************************************************************
 		
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao(); 
 		
 		System.out.println("TESTE 1: Insert Department");
 		Department department = new Department(null, "Compras");
 		departmentDao.insert(department);
-		System.out.println("Inserted! New id = " + department.getId());
+		System.out.println("Inserted! New id = " + department.getId());		
+		
+		System.out.println("TESTE 2: Update Department");
+		department.setName("Frios");
+		departmentDao.update(department);
+		System.out.println("Update completed");	
 	}
 
 }
