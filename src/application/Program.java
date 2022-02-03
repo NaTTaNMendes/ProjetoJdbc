@@ -64,6 +64,10 @@ public class Program {
 		System.out.println("TESTE 3: Delete Department");
 		departmentDao.deleteById(8);
 		System.out.println("Deletion completed");	
+		
+		System.out.println("TESTE 4: findById Department");
+		department = departmentDao.findById(4);
+		System.out.println(department);	
 	}
 
 }
