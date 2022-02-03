@@ -3,6 +3,7 @@ package application;
 import java.util.Date;
 import java.util.List;
 
+import db.DB;
 import model.dao.DaoFactory;
 import model.dao.DepartmentDao;
 import model.dao.SellerDao;
@@ -12,7 +13,6 @@ import model.entities.Seller;
 public class Program {
 
 	public static void main(String[] args) {
-		/*
 		SellerDao sellerDao = DaoFactory.createSellerDao();
 		
 		System.out.println("TESTE 1: seller findById");
@@ -46,15 +46,18 @@ public class Program {
 		System.out.println("\nTESTE 6: seller delete");
 		sellerDao.deleteById(10);
 		System.out.println("Deletion completed");
-		*/
+		
 		//*****************************************************************************************
+		System.out.println();
+		System.out.println();
+		System.out.println();
 		
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao(); 
 		
 		System.out.println("TESTE 1: Insert Department");
-		Department department = new Department(null, "Compras");
-		departmentDao.insert(department);
-		System.out.println("Inserted! New id = " + department.getId());		
+		Department departmentT = new Department(null, "Compras");
+		departmentDao.insert(departmentT);
+		System.out.println("Inserted! New id = " + departmentT.getId());		
 		
 		System.out.println("TESTE 2: Update Department");
 		department.setName("Frios");
@@ -68,6 +71,14 @@ public class Program {
 		System.out.println("TESTE 4: findById Department");
 		department = departmentDao.findById(4);
 		System.out.println(department);	
+		
+		System.out.println("TESTE 5: findAll Department");
+		List<Department> listD = departmentDao.findAll();
+		for (int i = 0; i < listD.size(); i++) {
+			System.out.println(listD.get(i));
+		}
+		
+		DB.closeConnection();
 	}
 
 }
