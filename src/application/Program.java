@@ -60,6 +60,10 @@ public class Program {
 		department.setName("Frios");
 		departmentDao.update(department);
 		System.out.println("Update completed");	
+		
+		System.out.println("TESTE 3: Delete Department");
+		departmentDao.deleteById(8);
+		System.out.println("Deletion completed");	
 	}
 
 }
